@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: development
+    active: openshift
 ---
 spring:
   profiles: cloud
@@ -83,3 +83,14 @@ security:
     client:
       client-id: acme
       access-token-uri: http://localhost:8787
+
+	  ---
+spring:
+  profiles: openshift
+  jpa:
+    show_sql: false
+    database: H2
+  datasource:
+    url: jdbc:h2:mem:userdb;DB_CLOSE_ON_EXIT=FALSE
+    initialize: false    
+security.ignored: /resources/**
