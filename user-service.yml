@@ -63,13 +63,31 @@ spring:
     url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
     initialize: false
 
-	---
+---
+server:
+  port: 8181
+  contextPath: /uaa
+security:
+  user:
+    password: password
+  enable-csrf: false
 spring:
   profiles: openshift
   jpa:
-    show_sql: false
+    show_sql: true
     database: H2
   datasource:
     url: jdbc:h2:mem:userdb;DB_CLOSE_ON_EXIT=FALSE
-    initialize: false    
+    username: sa
+    password: 
+    initialize: false
 security.ignored: /resources/**
+eureka:
+  instance:
+    prefer-ip-address: true
+    non-secure-port: 8181
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discoveryservice-iqbalkhan.rhcloud.com/eureka/
