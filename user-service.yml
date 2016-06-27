@@ -1,7 +1,4 @@
-spring:
-  profiles:
-    active: openshift
----
+
 server:
   contextPath: /uaa
 security:
