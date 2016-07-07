@@ -5,7 +5,7 @@ security:
   user:
     password: password
   enable-csrf: false
-logging.level.org.springframework.security: DEBUG
+logging.level.org.springframework.security: WARN
 ---
 spring:
   profiles: cloud
@@ -74,16 +74,19 @@ spring:
   jpa:
     show_sql: true
     database: H2
+    database-platform: org.hibernate.dialect.H2Dialect
   datasource:
     url: jdbc:h2:mem:userdb;DB_CLOSE_ON_EXIT=FALSE
     username: sa
     password: 
     initialize: false
+    testWhileIdl: true
+    validationQuery: SELECT 1
 security.ignored: /resources/**
 eureka:
   instance:
     prefer-ip-address: true
-    non-secure-port: 8181
+    # non-secure-port: 8181
   client:
     registerWithEureka: true
     fetchRegistry: true
@@ -102,16 +105,19 @@ spring:
   jpa:
     show_sql: true
     database: H2
+    database-platform: org.hibernate.dialect.H2Dialect
   datasource:
     url: jdbc:h2:mem:userdb;DB_CLOSE_ON_EXIT=FALSE
     username: sa
     password: 
     initialize: false
+    testWhileIdl: true
+    validationQuery: SELECT 1
 security.ignored: /resources/**
 eureka:
   instance:
     prefer-ip-address: true
-    non-secure-port: 8181
+    # non-secure-port: 8181
   client:
     registerWithEureka: true
     fetchRegistry: true

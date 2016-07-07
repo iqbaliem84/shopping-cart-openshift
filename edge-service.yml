@@ -119,7 +119,7 @@ zuul:
 security:
   oauth2:
     resource:
-      userInfoUri: http://userservice-iqbalkhan.rhcloud.com:8181/uaa/user
+      userInfoUri: http://userservice-iqbalkhan.rhcloud.com/uaa/user
   ignored: /catalog/**
 eureka:
   instance:
@@ -128,7 +128,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://discovery-service-iqbalkhan.rhcloud.com:8761/eureka/
+      defaultZone: http://discoveryservice-iqbalkhan.rhcloud.com/eureka/
 ---   
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:

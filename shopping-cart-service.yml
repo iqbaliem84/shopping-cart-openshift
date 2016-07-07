@@ -97,7 +97,7 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: http://192.168.99.100:8181/uaa/user
+      userInfoUri: http://userservice-iqbalkhan.rhcloud.com/uaa/user
     client:
       client-id: acme
       access-token-uri: http://192.168.99.100:8787
@@ -109,6 +109,6 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
+      defaultZone: http://discoveryservice-iqbalkhan.rhcloud.com/eureka/
+---
 security.ignored: /resources/**
